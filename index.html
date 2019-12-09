@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -8,60 +8,284 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
+    <style>
+        body {
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        path {
+          fill: none;
+          stroke: #fc0;
+          stroke-width: 2px;
+        }
+        .subinfo {
+          font-size: 11px;
+          color: #828282;
+          margin: auto;
+        }
+        .arrow {
+          stroke-width: 2px;
+          stroke: #828282;
+        }
+        #arrowhead path {
+          stroke: none;
+          fill: #828282;
+        }
+        .svg-tooltip {
+          font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple   Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+          background: rgba(69,77,93,.9);
+          border-radius: .1rem;
+          color: #fff;
+          display: block;
+          font-size: 11px;
+          max-width: 320px;
+          padding: .2rem .4rem;
+          position: absolute;
+          text-overflow: ellipsis;
+          white-space: pre;
+          z-index: 300;
+          visibility: hidden;
+        }
+      </style>
     <title>Organizing and AI</title>
   </head>
   <body>
+    <div class="svg-tooltip" id="circle-tooltip"></div>
     <!-- Begin page content -->
     <main role="main" class="container">
-      <h1 class="mt-5">Assessing the intersection of Organizational Structure and Fairness, Accountability, and Transparency of AI efforts within industry</h1>
+      <!-- <h1 class="mt-5">Assessing the intersection of Organizational Structure and Fairness, Accountability, and Transparency of AI efforts within industry</h1> -->
 
+      <h1 class="mt-5">How we organize shapes the work that we do</h1>
       <h4 class="mt-5">Interactive implications tutorial at the <a href="https://fatconference.org/2020/acceptedtuts.html">ACM FAT* 2020 Conference</a></h4>
       <p>
       <div class="row">
-        <div class="col-sm-9">
-          <!-- <p>ToDo (small, interactive, javascript organizational food chain system)</p> -->
+        <div class="col-sm-12">
+          <p class="lead">
+            The work within the Fairness, Accountability, and Transparency of ML (fair-ML) community could
+            positively benefit from <b>understanding the role of organizational culture and structure in the
+            effective practice of fair-ML efforts of individuals, teams, or initiatives within industry</b>.
+            In this tutorial session we will explore various organizational structures and possible leverage
+            points to effectively intervene in the process of development and deployment of AI systems towards
+            contributing to positive fair-ML outcomes. </p>
+
+        <svg id="timeline">
+          <defs>
+            <marker id="arrowhead" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M 0 0 L 10 5 L 0 10 z" />
+            </marker>
+            <path id="test" />
+          </defs>
 
 
+        </svg>
 
-      <p class="lead">
-        The work within the Fairness, Accountability, and Transparency of ML (fair-ML) community will positively benefit from appreciating the role of organizational culture and structure in the effective practice of fair-ML efforts of individuals, teams, or initiatives within industry. In this tutorial session we will explore various organizational structures and possible leverage points to effectively intervene in the process of development and deployment of AI systems towards contributing to positive fair-ML outcomes. We will begin by presenting the results of interviews conducted during the first stage of an ethnographic study among practitioners working in industry, including themes related to: origination and evolution, common challenges, ethical tensions, and effective enablers. The study was designed through the lens of Industrial Organizational Psychology and aims to create a mapping of the current state of the fair-ML organizational structures inside major AI companies. We also look at the most-desired future state to enable effective work to increase algorithmic accountability, as well as the key elements in the transition from the current to that future state. We investigate drivers for change as well as the tensions between creating an 'ethical' system vs one that is 'ethical' enough.
-        After presenting our preliminary findings, the rest of the tutorial will be highly interactive. Starting with a facilitated activity in break out groups, we will discuss the already identified challenges and share best practices and mitigation strategies. Finally, we hope to create space for productive discussion among AI practitioners in industry, academic researchers within various fields working directly on algorithmic accountability and transparency research, and advocates for various communities most impacted by technology. Based on the interactive component of the tutorial, facilitators and interested participants will collaborate on further developing the discussed challenges into scenarios and guidelines that will be published as a follow up report.
+      <div id="details">
+      </div>
+
+      <div id="details-popup-aviation">
+        <p>
+        A 'Go-Team' model employs a rotating task-force of 8-12 experts trained in technical, policy, social-science, media, forensic, and community management matters. The multi-faceted quantitative and qualitative data that this task-force generates feeds back to industry stakeholders to improve airline safety and to inform government stakeholders so they can improve the relevant infrastructure, such as Air Traffic Control systems.
       </p>
+      </div>
+
+      <div id="details-popup-space">
+        <p>
+          What could the organizational culture that exist in the Space Industry teach us about the possibilities for shared accountbaility and shared responsiblity in the field AI?
+        </p>
+        <blockquote class="blockquote">
+          <p class="mb-0">"One person’s mistake is everybody’s mistake. <br />In Space, if you make a mistake … it’s more the organization that did not see the possible mistake, it did not put in place all the blocks for that mistake not to happen or to be caught at the beginning."</p>
+          <footer class="blockquote-footer">Paolo Nespoli (Italian astronaut and engineer of the European Space Agency, part of 7 missions to ISS). <a href="https://www.media.mit.edu/videos/beyond-the-cradle-2018-03-10/?autoplay=true">Source: Beyond The Cradle, MIT, 2018.</a></footer>
+        </blockquote>
+
+          <h4>See Also:</h4>
+          <ul>
+            <li> Clancey, W. J., Sierhuis, M., Seah, C., Buckley, C., Reynolds, F., Hall, T., Scott, M. (2008) <a href="https://billclancey.name/ESAW07OCAMSClancey.pdf">Multi-agent simulation to implementation: A practical engineering methodology for designing space flight operations.</a> In A. Artikis, G. O'Hare, K. Stathis, & G. Vouros (Eds.), Engineering Societies in the Agents' World VIII. Athens, Greece, October 2007.  Lecture Notes in Computer Science Series, Volume 4870. Heidelberg Germany:  Springer, pp. 108-123.
+            </li><li> Clancey, W. J., Sierhuis, M., Alena, R., Berrios, D., Dowding, J., Graham, J.S., Tyree, K.S., Hirsh, R.L., Garry, W.B., Semple, A., Buckingham Shum, S.J., Shadbolt, N. and Rupert, S. (2007) <a href="https://billclancey.name/MobileAgents04.pdf">Automating CapCom using Mobile Agents and robotic assistants.</a> NASA Technical Publication 2007-214554. Washington, D.C.
+            </li>
+          </ul>
+        </p>
+
+      </div>
+
+      <div id="details-popup-quantum">
+
+        <h4>References:</h4>
+        <ul>
+          <li>[1] Lawless, W. F. (2017). <a href="https://loop.frontiersin.org/publications/47690607">The entangled nature of interdependence. Bistability, irreproducibility and uncertainty.</a> Journal of Mathematical Psychology, 78, 51-64.
+          </li><li>[2] Lawless, W. F. (2017). <a href="https://www.frontiersin.org/articles/10.3389/fphy.2017.00030/full">The physics of teams: interdependence, measurable entropy, and computational emotion.</a> Frontiers in Physics, 5, 30.
+          </li>
+        </ul>
+      </div>
+
+      <div id="details-popup-management">
+        There're many books that have been influencial in the field of Management and Organizational Science. Some of the references we found helpful include:
+
+        <ul>
+          <li>Wheatley, M. J., & Rogers, M. E. (1998). A simpler way. Berrett-Koehler Publishers.
+          </li><li>Horowitz, Ben. (2019). What You Do Is Who You Are: How to Create Your Business Culture. New York: Harper Business.
+          </li><li>Coffman, C., & Sorensen, K. (2013). Culture Eats Strategy for Lunch: The Secret of Extraordinary Results. Igniting the Passion Within (Denver, Colo., 2013).
+          </li>
+        </ul>
+      </div>
+
+      <div id="details-popup-ethn">
+        <p>
+        Ethnography, and the many disciplines that count ethnography as a core method, provide crucial perspectives on the topics within fair-ML work, by illuminating the context and interconnected relationships surrounding algorithmic systems. As explored by scholar Nick Seaver in his work on critical algorithmic studies, ethnography could enable practitioners to "enact algorithms not as inaccessible black boxes, but as heterogeneous and diffuse sociotechnical systems, with entanglements beyond the boundaries of proprietary software" [1]. The "scavenging ethnographer", he describes, has developed an understanding of algorithms not as singular technological objects but rather as "culture" because they are composed of collective human practices. Considering how people enact algorithms through their actions requires the development of reflexive practices recognizing that "any model of social behavior is inseparable from the social context and research methods from which it was produced" [2].
+        </p>
+
+        <h4>References:</h4>
+        <ul>
+          <li>[1] Nick Seaver. 2017. Algorithms as culture: Some tactics for the ethnography of 326 algorithmic systems. Big Data & Society 4, 2 (2017).</li>
+          <li>[2] Anna Lauren Hoffmann. 2019. Where fairness fails: data, algorithms, and the limits of antidiscrimination discourse. Information, Communication &
+Society 22, 7 (2019), 900–915.</li>
+        </ul>
+
+        <h4>See Also:</h4>
+        <ul>
+          <li> R. Stuart Geiger, Dan Sholler, Aaron Culich, Ciera Martinez, Fer- nando Hoces de la Guardia, François Lanusse, Kellie Ottoboni, Marla Stuart, Maryam Vareth, Nelle Varoquaux, Sara Stoudt, and Stéfan van der Walt. "<a href="https://osf.io/preprints/socarxiv/a7b3m/download">Challenges of Doing Data-Intensive Research in Teams, Labs, and Groups.</a>" BIDS Best Practices in Data Science Series. Berkeley Institute for Data Science: Berkeley, California. 2018. doi:10.31235/osf.io/a7b3m
+          </li><li>R. Stuart Geiger, Orianna DeMasi, Aaron Culich, Andreas Zoglauer, Diya Das, Fernando Hoces de la Guardia, Kellie Ottoboni, Marsha Fenner, Nelle Varoquaux, Rebecca Barter, Richard Barnes, Sara Stoudt, Stacey Dorton, Stéfan van der Walt. “<a href="https://osf.io/preprints/socarxiv/8gsjz/download">Best Practices for Fostering Diversity and Inclusion in Data Science: Report from the BIDS Best Practices in Data Science Series.</a>” BIDS Best Practices in Data Science Series. Berkeley, CA: Berkeley Institute for Data Science. 2019. doi:10.31235/osf.io/8gsjz
+          </li><li>Dan Sholler, Sara Stoudt, Chris Kennedy, Fernando Hoces de la Guardia, François Lanusse, Karthik Ram, Kellie Ottoboni, Marla Stuart, Maryam Vareth, Nelle Varoquaux, Rebecca Barter, R. Stuart Geiger, Scott Peterson, and Stéfan van der Walt. “<a href="https://osf.io/preprints/socarxiv/qr8cz/download">Resistance to Adoption of Best Practices.</a>” BIDS Best Practices in Data Science Series. Berkeley Institute for Data Science: Berkeley, California. 2019. doi:10.31235/osf.io/qr8cz
+          </li>
+        </ul>
+      </div>
+
+      <div id="details-popup-fat">
+        <p> Watch the FAT* 2019 Translation Tutorial: Challenges of incorporating algorithmic fairness into industry practice
+        </p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/UicKZv93SOY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+      <div id="details-popup-sts">
+        <p>
+        Drawing from prior work by Michael Veale et al., investigating the challenges of practitioners
+        operating within high-stakes public sector institutions, we see that many of them are related to
+        organizational structure [1]. Situating the development of AI systems within different organizational cultures gives us
+        new insights on debated FAT* issues of power imbalance, discrimination, and many others. As scholar
+        Anna Hoffman explores in her work, "designers and engineers are limited in their ability to address
+        broad social and systemic problems" [2] and overcoming these limits requires broader socio-technical understanding. Recent work by Andrew Selbst et al.
+        developed a framework for identifying and mitigating the failure modes or "traps" which arise from failing to consider
+        the interrelationship between social context and technology [3]. We build on their work and provide new perspectives
+        on some of the concrete characteristics of the Framing Trap, the Portability Trap, and the Solutionism Trap. Our work remains focused
+        on the complex human and algorithmic interactions [4] within the larger organizational and social context where these traps are enacted.
+        </p>
+        <h4>References:</h4>
+        <ul>
+          <li>[1] Michael Veale, Max Van Kleek, and Reuben Binns. 2018. Fairness and accountability design needs for algorithmic support in high-stakes public sector decision-
+making. In Proceedings of the 2018 chi conference on human factors in computing systems. ACM, 440.</li>
+          <li>[2] Anna Lauren Hoffmann. 2019. Where fairness fails: data, algorithms, and the limits of antidiscrimination discourse. Information, Communication &
+Society 22, 7 (2019), 900–915.</li>
+          <li>[3] Andrew D Selbst, Danah Boyd, Sorelle A Friedler, Suresh Venkatasubramanian, and Janet Vertesi. 2019. Fairness and abstraction in sociotechnical systems. In
+Proceedings of the Conference on Fairness, Accountability, and Transparency. ACM, 329 59–68.</li>
+          <li>[4] Bruno Latour. 2005. Reassembling the social an introduction to actor-network-theory. Oxford University Press.</li>
+        </ul>
+
+        <h4>See Also:</h4>
+        <ul>
+          <li>Holstein, K., Wortman Vaughan, J., Daumé III, H., Dudik, M., & Wallach, H. (2019, April). <a href="https://arxiv.org/pdf/1812.05239.pdf">Improving fairness in machine learning systems: What do industry practitioners need?.</a> In Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems (p. 600). ACM.</li>
+          <li>Van de Poel, I., & Zwart, S. D. (2010). <a href="https://doi.org/10.1177/0162243909340272">Reflective Equilibrium in R & D Networks.</a> Science, Technology, & Human Values, 35(2), 174–199.</li>
+          <li>Latour, B. (2014). Give me a laboratory and I will raise the world (pp. 141-70). Paris.</li>
+          <li>Latour, B., & Woolgar, S. (2013). Laboratory life: The construction of scientific facts. Princeton University Press.</li>
+        </ul>
+
+      </div>
+      <div id="details-popup-ethics">
+        <p>
+        </p>
+        <h4>See:</h4>
+          <ul>
+            <li>Van de Poel, Ibo, and Martin Sand. 2018. <a href="https://link.springer.com/article/10.1007%2Fs11229-018-01951-7">"Varieties of responsibility: two problems of responsible innovation."</a>  Synthese.
+            </li><li>Van de Poel, Ibo. 2018. <a href="https://link.springer.com/article/10.1007%2Fs10676-018-9461-9">"Design for value change."</a>  Ethics and Information Technology.
+            </li><li>Van de Poel, Ibo. 2013. "Translating values into design requirements." In Philosophy and Engineering: Reflections on Practice, Principles and Process, edited by D. Mitchfelder, N. McCarty and D.E. Goldberg, 253-266. Dordrecht: Springer.
+            </li><li>Van de Poel, Ibo, Jessica Nihlén Fahlquist, Neelke Doorn, Sjoerd Zwart, and Lambèr Royakkers. 2012. <a href="https://link.springer.com/article/10.1007%2Fs11948-011-9276-0">"The Problem of Many Hands: Climate Change as an Example."</a>  Science and Engineering Ethics 18 (1):49-68.
+            </li><li>Askell, A., Brundage, M., & Hadfield, G. (2019). <a href="https://arxiv.org/pdf/1907.04534.pdf">The Role of Cooperation in Responsible AI Development.</a> arXiv preprint arXiv:1907.04534.
+            </li>
+          </ul>
+      </div>
+      <div id="details-popup-cs">
+        <p> The work within the Fairness, Accountability, and Transparency of AI community relates to the field of AI Safety and Verification.
+          In the fields of Compiter Science and Machine Learning the process of verification has been defined by ML
+          researchers as
+          "producing a compelling argument that the system will not misbehave under a broad range of circumstances" [1].
+          Traditionally, in Machine Learning research, there's a difference between testing and verification.
+          Testing refers to evaluating the system in concrete conditions and making sure that it behaves as expected.
+          Testing has evolved to be a major part of software development ever since its early developments in the
+          1950s.
+
+        </p>
+        <blockquote class="blockquote">
+          <p class="mb-0">"Organizations which design systems ... are constrained to produce designs which are copies of the communication structures of these organizations."</p>
+          <footer class="blockquote-footer">Melvin Conway [2]</footer>
+        </blockquote>
+        <h4>References:</h4>
+          <ul>
+            <li>[1] Goodfellow, I.; McDaniel, P.; and Papernot, N.  2018.  Making machine learning robust against adversarial inputs.Com-munications of the ACM61(7).
+            </li><li>[2] Conway, M. E. (1968). <a href="http://www.melconway.com/Home/Committees_Paper.html">How do committees invent.</a> Datamation, 14(4), 28-31.
+            </li>
+          </ul>
+      </div>
+      <div id="details-popup-ot">
+        <p>
+        </p>
+        <h4>See:</h4>
+          <ul>
+            <li>Colfer, L. J., & Baldwin, C. Y. (2016). <a href="https://academic.oup.com/icc/article/25/5/709/2198460">The mirroring hypothesis: theory, evidence, and exceptions.</a> Industrial and Corporate Change, 25(5), 709-738.
+            </li><li>Orlikowski, W. J. (1992). <a href="https://pubsonline.informs.org/doi/abs/10.1287/orsc.3.3.398">The duality of technology: Rethinking the concept of technology in organizations.</a> Organization science, 3(3), 398-427.
+            </li><li>Rohini Jalan, Kevin Woojin Lee, Paul Leonardi, Wanda J Orlikowski, Matthew Beane, Rohini Jalan, Kevin Woojin Lee, and Sarah Sachs. 2019. <a href="https://journals.aom.org/doi/abs/10.5465/AMBPP.2019.15844symposium">Producing Technological Futures: Reflecting on Workplace Automation, Inequality, and Ethics.</a> Proceedings, 2019,
+            </li><li>Shaikh, Maha, Vaast, Emmanuelle, Barley, Stephen, Crowston, Kevin, Orlikowski, Wanda J, Shaikh, Maha, Vaast, Emmanuelle, and Yoo, Youngjin, 2017. <a href="https://journals.aom.org/doi/abs/10.5465/AMBPP.2017.11547symposium">The Work of Technologies & Technologies at Work: Implications for Organizing, Managing & Innovating.</a> Proceedings, 2017.
+            </li><li>Roy, Bonitta. 2018. <a href="https://medium.com/agile-sensemaking/sensemaking-in-organizations-pt-1-e79c4aaf63ca">Sensemaking in Organizations. Organizations evolve to make better sense of complexity.</a> Medium.
+            </li><li>Roy, Bonitta. 2006. <a href="https://www.researchgate.net/publication/26510496_The_Map_the_Gap_and_the_Territory">The Map, the Gap, and the Territory.</a> Integral Review.
+            </li><li>Roy, Bonitta. 2016. <a href="https://medium.com/open-participatory-organized/a-manifesto-for-open-participation-60b62d327684">A Manifesto for the Open Participatory Organization.</a> Medium.
+            </li>
+          </ul>
+      </div>
+      <div id="details-popup-add">
+      </div>
+      <div id="details-popup-tutorial">
+        <p>
+          By broadening the scope of the discussion, we seek to create space for
+          multidisiplinary and intergenerational insights to emerge.
+          We invite all of you to participate virtually or during the ACM FAT* conference.
+          The tutorial will be most relevant to you if you are currently involved in or interested in intiating fair-ML efforts in industry.
+        Use the visualization above to explore and contribute to the conversation. </p>
+
+          <div>
+            <h4>What to expect:</h4>
+            <ul>
+              <li>An interdisciplinary discussion about organizational change.</li>
+              <li>An overview of the results of an ethnographic study we conducted among industry practicioners working specifically within the fair-ML field.</li>
+              <li>A fascilitated design-thinking session where we'll do a deep dive into the themes that have emerged from the study.</li>
+            </ul>
+          </div>
+
+          <h4> Organizers</h4>
+          <ul>
+          <li><a href="https://www.linkedin.com/in/bogdanarakova/">Bogdana Rakova</a>, Fellow at Partnership on AI; Data Scientist, Responsible AI at Accenture
+          </li><li><a href="https://www.linkedin.com/in/jingyingyang/">Jingying Yang</a>, Program Lead, Partnership on AI
+          </li><li><a href="https://www.linkedin.com/in/rumman/">Rumman Chowdhury</a>, Global Lead for Responsible AI at Accenture
+          </li></ul>
+
+      </div>
+      <div id="observablehq-9b576811"></div>
+      <script type="module">
+          import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+          import define from "https://api.observablehq.com/@bobi-rakova/line-widget.js?v=3";
+          const inspect = Inspector.into("#observablehq-9b576811");
+          (new Runtime).module(define, name => (name === "widget") && inspect());
+      </script>
+      <div>
+        <p> Use the interactive sketch above to explore the work we think will influence the discussion during the tutorial session.
+          Most of all, what are we missing? Use the "+" bubble to be part of this exploration and contribute your ideas and experience.
+        </p>
+        <p>
+          We've adopted Berkana Institute's <a href="https://berkana.org/about/our-theory-of-change/">Two Loop Theory of Change model</a>,
+          further explored by <a href="https://medium.com/thefarewellfund/hospicing-the-old-16e537396c4b">Cassie Robinson</a>:
+          <img src="twoloop.png" style="width: 75%;" />
+          <div class="subinfo"><i>Source: Cassie Robinson, <a href="https://medium.com/thefarewellfund/hospicing-the-old-16e537396c4b">Hospicing The Old</a></i></div>
+        </p>
+        <p>For questions, thoughts, ideas, feedback, <a href = "https://forms.gle/Z4gzgoAD1qi5ixTdA">please reach out to us here</a>. Thank You!</p>
+      </div>
 
 
-      <!-- <h4>Target audience - who may benefit from the tutorial</h4>
-      <p>ToDo</p>
-      <h4>Instructions for participants</h4>
-      <p>ToDo</p>
-      <h4>Literature Review</h4>
-      <p>ToDo</p> -->
-
-      <h4> Organizers</h4>
-      <ul>
-      <li><a href="https://www.linkedin.com/in/bogdanarakova/">Bogdana Rakova</a>, Fellow at Partnership on AI; Data Scientist, Responsible AI at Accenture
-      </li><li><a href="https://www.linkedin.com/in/jingyingyang/">Jingying Yang</a>, Program Lead, Partnership on AI
-      </li><li><a href="https://www.linkedin.com/in/rumman/">Rumman Chowdhury</a>, Global Lead for Responsible AI at Accenture
-      </li></ul>
-      <p>For questions, <a href = "mailto:b.rakova@gmail.com">please reach out to us here</a>.</p>
-
-
-
-
-
-
-
-</div>
-      <div class="col-sm-3">
-        <h4>Important Dates</h4>
-        <p><a href="https://fatconference.org/"> ACM FAT* Conference:</a><br/>
-          January 27-30, 2020</strike></p>
-
-        <h4>Participate</h4>
-        <p>We look forward to your participation in traversing this dark corner of the Universe together. Please reach out to us through this form: xxx</p>
-        </div>
     </div>
-
-
     </main>
 
     <!-- Optional JavaScript -->
@@ -69,5 +293,9 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="twoloop.js"></script>
   </body>
 </html>

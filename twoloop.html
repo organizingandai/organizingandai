@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+<style>
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    path {
+      fill: none;
+      stroke: #fc0;
+      stroke-width: 2px;
+    }
+    .arrow {
+      stroke-width: 1px;
+      stroke: #444;
+    }
+    #arrowhead path {
+      stroke: none;
+      fill: black;
+    }
+  </style>
+</head>
+<body>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="960" height="500">
+  <defs>
+    <marker id="arrowhead" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" />
+    </marker>
+    <path id="test" />
+  </defs>
+</svg>
+
+<svg>
+</svg>
+
+<!-- <div id="observablehq-f3ffb195"></div>
+
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+import define from "https://api.observablehq.com/@mbostock/circle-wave.js?v=3";
+const inspect = Inspector.into("#observablehq-f3ffb195");
+(new Runtime).module(define, name => (name === "canvas") && inspect());
+</script> -->
+
+<!-- <div id="observablehq-e159c9b3"></div>
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+import define from "https://api.observablehq.com/@bobi-rakova/bubbles-exploration.js?v=3";
+const inspect = Inspector.into("#observablehq-e159c9b3");
+(new Runtime).module(define, name => (name === "svgHTML") && inspect());
+</script> -->
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="twoloop.js"></script>
