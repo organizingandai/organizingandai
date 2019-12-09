@@ -44,7 +44,7 @@ data_as_json = [
   {
     label: "",
     key: "management",
-    tag: "",
+    tag: "Management Theory",
     Employment: "2",
     radius: base_width
   },
